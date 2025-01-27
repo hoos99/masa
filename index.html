@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <!-- Ensures mobile responsiveness -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Maths Academy - Join the Movement</title>
   <script src="https://kit.fontawesome.com/c3c92a5314.js" crossorigin="anonymous"></script>
@@ -27,7 +26,6 @@
       margin: 0 auto;
     }
 
-    /* Left Section */
     .left-section {
       width: 50%;
       padding: 4rem;
@@ -38,14 +36,14 @@
       background-color: #f9f9f9;
     }
 
-    /* Logo */
+    /* --- Header (Logo + Header Buttons) --- */
     .logo {
       font-size: 2.5rem;
       font-weight: bold;
       color: #333;
       display: flex;
       align-items: center;
-      position: absolute;
+      position: absolute; /* removed in mobile */
       top: 1rem;
       left: 1.5rem;
     }
@@ -56,11 +54,10 @@
       line-height: 1.2;
     }
 
-    /* Header Buttons */
     .header-buttons {
       display: flex;
       gap: 1rem;
-      position: absolute;
+      position: absolute; /* removed in mobile */
       top: 1.5rem;
       right: 1.5rem;
     }
@@ -75,7 +72,7 @@
       text-decoration: underline;
     }
 
-    /* Headings and Text */
+    /* --- Main Content --- */
     .left-section h1 {
       font-size: 2rem;
       margin: 4rem 0 1.5rem 0;
@@ -88,14 +85,7 @@
       color: #555;
       text-align: center;
     }
-    .left-section .mission {
-      font-size: 1rem;
-      color: #666;
-      margin-bottom: 2rem;
-      text-align: center;
-    }
 
-    /* Call to Action Button */
     .left-section .get-started {
       text-decoration: none;
       font-size: 1rem;
@@ -112,7 +102,7 @@
       transform: scale(1.05);
     }
 
-    /* Footer Links */
+    /* --- Footer Links --- */
     .left-section .links {
       margin-top: 3rem;
       font-size: 0.7rem;
@@ -137,14 +127,13 @@
       text-align: center;
     }
 
-    /* Right Section (Background Image) */
     .right-section {
       width: 50%;
       background: url("images/background-image.jpeg") no-repeat center center;
       background-size: cover;
     }
 
-    /* Responsive Adjustments */
+    /* --- Responsive Adjustments --- */
     @media (max-width: 768px) {
       body {
         flex-direction: column;
@@ -152,10 +141,46 @@
 
       .left-section {
         width: 100%;
-        padding: 2rem;
+        padding: 2rem 1rem; /* Tighter padding on mobile */
       }
 
-      /* Hide the right-section (image) completely on mobile */
+      /* Remove absolute positioning for mobile */
+      .logo {
+        position: static;
+        justify-content: center;
+        margin-bottom: 1rem;
+      }
+      .logo {
+        text-align: center;
+      }
+
+      .header-buttons {
+        position: static;
+        justify-content: center;
+        margin-bottom: 2rem; /* space below the buttons */
+      }
+
+      /* Scale down font sizes and margins a bit for mobile */
+      .left-section h1 {
+        font-size: 1.6rem;
+        margin: 2rem 0 1rem 0;
+      }
+
+      .left-section .slogan {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .left-section .get-started {
+        font-size: 1rem;
+        margin: 1.5rem auto;
+      }
+
+      .left-section .links {
+        font-size: 0.75rem;
+      }
+
+      /* Hide right section entirely on mobile */
       .right-section {
         display: none;
       }
@@ -164,7 +189,6 @@
 </head>
 <body>
   <div class="left-section">
-    <!-- Updated Logo Text to "masa" -->
     <div class="logo">
       masa
       <span>MATHS ACADEMY<br>OF SOUTH AFRICA</span>
@@ -177,9 +201,10 @@
 
     <h1>For every learner,<br>every classroom.<br>Meaningful progress.</h1>
     <p class="slogan">
-      Our mission is to deliver a world-class Mathematics education
-      to every student, everywhere in South Africa.
+      Our mission is to deliver a world-class Mathematics
+      education to every student, everywhere in South Africa.
     </p>
+
     <a href="#start" class="get-started">JOIN THE MOVEMENT</a>
 
     <div class="links">
@@ -189,13 +214,11 @@
       <a href="#employees">Login for employees</a>
     </div>
 
-    <!-- Updated Footer Text -->
     <div class="footer">
       &copy; 2025 Maths Academy of South Africa. Designed with care.
     </div>
   </div>
 
-  <!-- This section is hidden on mobile via the media query -->
   <div class="right-section"></div>
 </body>
 </html>
