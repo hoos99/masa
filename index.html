@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <!-- Viewport for mobile responsiveness -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Maths Academy - Join the Movement</title>
   <script src="https://kit.fontawesome.com/c3c92a5314.js" crossorigin="anonymous"></script>
@@ -17,33 +18,33 @@
     body {
       font-family: 'Roboto', sans-serif;
       display: flex;
-      flex-direction: row;
+      flex-direction: row; /* Side-by-side on desktop */
       align-items: stretch;
       justify-content: space-between;
       min-height: 100vh;
       background-color: #fff;
       color: #333;
-      margin: 0 auto;
+      margin: 0;
     }
 
+    /* --- Left Section (Text/Logo) --- */
     .left-section {
       width: 50%;
       padding: 4rem;
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
       position: relative;
       background-color: #f9f9f9;
     }
 
-    /* --- Header (Logo + Header Buttons) --- */
+    /* Logo */
     .logo {
       font-size: 2.5rem;
       font-weight: bold;
       color: #333;
       display: flex;
       align-items: center;
-      position: absolute; /* removed in mobile */
+      position: absolute; /* Allows it to sit in top-left on desktop */
       top: 1rem;
       left: 1.5rem;
     }
@@ -54,10 +55,11 @@
       line-height: 1.2;
     }
 
+    /* Header Buttons (top-right) */
     .header-buttons {
       display: flex;
       gap: 1rem;
-      position: absolute; /* removed in mobile */
+      position: absolute; /* Top-right on desktop */
       top: 1.5rem;
       right: 1.5rem;
     }
@@ -72,21 +74,22 @@
       text-decoration: underline;
     }
 
-    /* --- Main Content --- */
-    .left-section h1 {
+    /* Headings & Slogan */
+    h1 {
       font-size: 2rem;
-      margin: 4rem 0 1.5rem 0;
+      margin: 4rem 0 1.5rem;
       color: #222;
       text-align: center;
     }
-    .left-section .slogan {
+    .slogan {
       font-size: 1.2rem;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
       color: #555;
       text-align: center;
     }
 
-    .left-section .get-started {
+    /* Call-to-action button */
+    .get-started {
       text-decoration: none;
       font-size: 1rem;
       color: #fff;
@@ -96,93 +99,114 @@
       border: none;
       align-self: center;
       margin: 2rem auto;
+      transition: background-color 0.3s, transform 0.3s;
     }
-    .left-section .get-started:hover {
+    .get-started:hover {
       background-color: #333;
       transform: scale(1.05);
     }
 
-    /* --- Footer Links --- */
-    .left-section .links {
+    /* Footer Links */
+    .links {
       margin-top: 3rem;
       font-size: 0.7rem;
       color: #999;
       text-align: center;
       letter-spacing: 0.15rem;
     }
-    .left-section .links a {
+    .links a {
       color: #999;
       text-decoration: none;
       margin: 0 1rem;
     }
-    .left-section .links a:hover {
+    .links a:hover {
       text-decoration: underline;
     }
 
-    /* Footer */
-    .left-section .footer {
+    /* Footer Text */
+    .footer {
       margin-top: 2rem;
       font-size: 0.8rem;
       color: #ccc;
       text-align: center;
     }
 
+    /* --- Right Section (Background Image) --- */
     .right-section {
       width: 50%;
-      background: url("images/background-image.jpeg") no-repeat center center;
+      background: url('images/background-image.jpeg') no-repeat center center;
       background-size: cover;
     }
 
-    /* --- Responsive Adjustments --- */
+    /************************************************************************
+      MOBILE RESPONSIVE RULES
+      Apply changes when the screen is smaller than 768px
+     ************************************************************************/
     @media (max-width: 768px) {
+      /* Stack sections vertically */
       body {
         flex-direction: column;
       }
 
+      /* Left section takes full width */
       .left-section {
         width: 100%;
-        padding: 2rem 1rem; /* Tighter padding on mobile */
+        padding: 2rem 1rem;
       }
 
-      /* Remove absolute positioning for mobile */
-      .logo {
-        position: static;
-        justify-content: center;
-        margin-bottom: 1rem;
+      /* Hide the right section entirely on mobile */
+      .right-section {
+        display: none;
       }
+
+      /* Logo and header buttons no longer absolutely positioned */
       .logo {
-        text-align: center;
+        position: static;       /* allows natural flow */
+        display: inline-flex;   /* keep 'masa' and text on same line */
+        margin-bottom: 0.5rem;
+        float: left;           /* floats left in same row */
       }
 
       .header-buttons {
         position: static;
-        justify-content: center;
-        margin-bottom: 2rem; /* space below the buttons */
+        float: right;          /* floats right in same row */
+        margin-top: 0.3rem;
       }
 
-      /* Scale down font sizes and margins a bit for mobile */
-      .left-section h1 {
-        font-size: 1.6rem;
-        margin: 2rem 0 1rem 0;
+      /* Provide a clearfix if needed so elements below don't float up */
+      .left-section::after {
+        content: '';
+        display: block;
+        clear: both;
       }
 
-      .left-section .slogan {
+      /* Adjust typography for smaller screens */
+      h1 {
+        font-size: 1.7rem;
+        margin: 3rem 0 1rem;
+      }
+      .slogan {
         font-size: 1rem;
         margin-bottom: 1rem;
       }
-
-      .left-section .get-started {
-        font-size: 1rem;
-        margin: 1.5rem auto;
+      .get-started {
+        margin: 2rem auto;
       }
 
-      .left-section .links {
-        font-size: 0.75rem;
+      /* Footer links in one line at the bottom */
+      .links {
+        margin-top: 3rem;
+        font-size: 0.8rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
       }
 
-      /* Hide right section entirely on mobile */
-      .right-section {
-        display: none;
+      /* Slightly bigger text for the copyright */
+      .footer {
+        font-size: 0.8rem;
+        margin-top: 1.5rem;
       }
     }
   </style>
@@ -193,7 +217,6 @@
       masa
       <span>MATHS ACADEMY<br>OF SOUTH AFRICA</span>
     </div>
-
     <div class="header-buttons">
       <a href="#login">Login</a>
       <a href="#signup">Sign Up</a>
@@ -204,11 +227,10 @@
       Our mission is to deliver a world-class Mathematics
       education to every student, everywhere in South Africa.
     </p>
-
     <a href="#start" class="get-started">JOIN THE MOVEMENT</a>
 
     <div class="links">
-      <a href="#cookies">Cookies</a>
+      <a href="#cookies">Cookies Notice</a>
       <a href="#privacy">Data Privacy</a>
       <a href="#legal">Legal Notice</a>
       <a href="#employees">Login for employees</a>
@@ -218,7 +240,6 @@
       &copy; 2025 Maths Academy of South Africa. Designed with care.
     </div>
   </div>
-
   <div class="right-section"></div>
 </body>
 </html>
