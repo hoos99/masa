@@ -5,9 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Maths Academy - Join the Movement</title>
 
-  <!-- Use Font Awesome kit if needed -->
-  <script src="https://kit.fontawesome.com/c3c92a5314.js" crossorigin="anonymous"></script>
-
   <style>
     /* Global Styles */
     * {
@@ -31,6 +28,7 @@
     .left-section {
       width: 100%;
       padding: 2rem;
+      position: relative; /* Needed for absolute positioning of header buttons */
     }
 
     /* Logo and Subtext */
@@ -49,12 +47,13 @@
       color: #666;
     }
 
-    /* Header Buttons */
+    /* Header Buttons (fixed to top-right) */
     .header-buttons {
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
       display: flex;
-      justify-content: flex-end;
       gap: 1rem;
-      margin-bottom: 1.5rem;
     }
 
     .header-buttons a {
@@ -69,7 +68,7 @@
       font-size: 1.8rem;
       text-align: center;
       line-height: 1.5;
-      margin: 2rem 0 1rem 0;
+      margin: 4rem 0 1rem 0;
     }
 
     .slogan {
@@ -130,12 +129,10 @@
 
     /* Media Queries (Mobile Specific) */
     @media (max-width: 768px) {
-      .logo {
-        align-items: flex-start;
-      }
-
+      /* Ensure header buttons stay in the top-right */
       .header-buttons {
-        justify-content: flex-start;
+        top: 1rem;
+        right: 1rem;
       }
 
       .get-started {
