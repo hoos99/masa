@@ -23,11 +23,13 @@
       color: #333;
     }
 
-    /* Left Section */
-    .left-section {
+    /* Header Container */
+    .header-container {
       width: 100%;
       padding: 2rem;
-      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
     /* Logo and Subtext */
@@ -35,7 +37,6 @@
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      margin-bottom: 1rem;
       font-size: 1.5rem;
       font-weight: bold;
     }
@@ -46,11 +47,8 @@
       color: #666;
     }
 
-    /* Header Buttons - Updated with your requested changes */
+    /* Header Buttons */
     .header-buttons {
-      position: absolute;
-      top: 1rem;
-      right: 1.5rem;
       display: flex;
       gap: 1rem;
     }
@@ -59,12 +57,12 @@
       text-decoration: none;
       font-size: 1rem;
       color: #000;
-      font-weight: bold; /* Added bold */
+      font-weight: bold;
       transition: text-decoration 0.2s ease;
     }
 
     .header-buttons a:hover {
-      text-decoration: underline; /* Added underline on hover */
+      text-decoration: underline;
     }
 
     /* Main Content */
@@ -124,12 +122,23 @@
       font-size: 0.8rem;
       margin-top: 1.5rem;
       color: #999;
+      padding: 0 1rem;
+      width: 100%;
+      white-space: nowrap;
     }
 
     /* Mobile Responsive Adjustments */
     @media (max-width: 768px) {
-      .left-section {
+      .header-container {
         padding: 1.5rem;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .header-buttons {
+        margin-top: 1rem;
+        width: 100%;
+        justify-content: flex-end;
       }
 
       .logo {
@@ -162,14 +171,15 @@
         gap: 1rem;
       }
 
-      .header-buttons {
-        right: 1rem;
+      .footer {
+        font-size: 0.7rem;
+        padding: 0 0.5rem;
       }
     }
   </style>
 </head>
 <body>
-  <div class="left-section">
+  <div class="header-container">
     <!-- LOGO -->
     <div class="logo">
       masa
@@ -181,7 +191,9 @@
       <a href="#login">Login</a>
       <a href="#signup">Sign Up</a>
     </div>
+  </div>
 
+  <div class="left-section">
     <!-- MAIN CONTENT -->
     <h1>For every learner,<br />every classroom.<br />Meaningful progress.</h1>
     <p class="slogan">
