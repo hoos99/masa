@@ -1,147 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maths Academy of South Africa</title>
-    <style>
-        /* Base Styles (Mobile First) */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maths Academy - Join the Movement</title>
+  <style>
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            background: #ffffff;
-            color: #2d2d2d;
-        }
+    body {
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 100vh;
+      background-color: #fff;
+      color: #333;
+    }
 
-        .container {
-            flex: 1;
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+    /* Left Section */
+    .left-section {
+      width: 100%;
+      padding: 2rem;
+      position: relative;
+    }
 
-        /* Header Section */
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 40px;
-        }
+    /* Logo and Subtext */
+    .logo {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
 
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-            color: #1a1a1a;
-        }
+    .logo span {
+      margin-top: 0.3rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
 
-        .logo-subtext {
-            font-size: 10px;
-            color: #666;
-            letter-spacing: 0.8px;
-            margin-top: 2px;
-        }
+    /* Header Buttons - Updated with your requested changes */
+    .header-buttons {
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+      display: flex;
+      gap: 1rem;
+    }
 
-        .auth-links {
-            display: flex;
-            gap: 20px;
-        }
+    .header-buttons a {
+      text-decoration: none;
+      font-size: 1rem;
+      color: #000;
+      font-weight: bold; /* Added bold */
+      transition: text-decoration 0.2s ease;
+    }
 
-        .auth-links a {
-            text-decoration: none;
-            color: #1a1a1a;
-            font-weight: bold; /* Changed to bold */
-            font-size: 14px;
-            transition: text-decoration 0.2s ease;
-        }
+    .header-buttons a:hover {
+      text-decoration: underline; /* Added underline on hover */
+    }
 
-        .auth-links a:hover {
-            text-decoration: underline; /* Hover underline */
-        }
+    /* Main Content */
+    .left-section h1 {
+      font-size: 1.8rem;
+      text-align: center;
+      line-height: 1.5;
+      margin: 4rem 0 1rem 0;
+    }
 
-        /* ... (Rest of the existing CSS remains the same) ... */
+    .slogan {
+      font-size: 1rem;
+      color: #555;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
 
-        /* Desktop Styles */
-        @media (min-width: 769px) {
-            .container {
-                padding: 40px;
-            }
+    .get-started {
+      display: block;
+      text-decoration: none;
+      font-size: 1rem;
+      color: #fff;
+      background-color: #000;
+      padding: 0.6rem 2rem;
+      border-radius: 20px;
+      text-align: center;
+      margin: 2rem auto;
+      transition: background-color 0.3s, transform 0.3s;
+    }
 
-            .logo {
-                font-size: 28px;
-            }
+    .get-started:hover {
+      background-color: #333;
+      transform: scale(1.05);
+    }
 
-            .logo-subtext {
-                font-size: 12px;
-            }
+    /* Footer Links */
+    .links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      font-size: 0.9rem;
+      margin-top: 2rem;
+    }
 
-            .auth-links a {
-                font-size: 16px; /* Maintain desktop font size */
-            }
+    .links a {
+      color: #999;
+      text-decoration: none;
+    }
 
-            /* ... (Rest of existing desktop styles remain the same) ... */
-        }
+    .links a:hover {
+      text-decoration: underline;
+    }
 
-        /* Mobile Optimizations */
-        @media (max-width: 768px) {
-            .header {
-                margin-bottom: 30px;
-            }
+    .footer {
+      text-align: center;
+      font-size: 0.8rem;
+      margin-top: 1.5rem;
+      color: #999;
+    }
 
-            .logo {
-                font-size: 20px;
-            }
+    /* Mobile Responsive Adjustments */
+    @media (max-width: 768px) {
+      .left-section {
+        padding: 1.5rem;
+      }
 
-            .auth-links {
-                gap: 15px;
-            }
+      .logo {
+        font-size: 1.8rem;
+      }
 
-            /* ... (Rest of existing mobile styles remain the same) ... */
-        }
-    </style>
+      .logo span {
+        font-size: 0.75rem;
+      }
+
+      .left-section h1 {
+        font-size: 2rem;
+        margin: 3rem 0 1rem 0;
+      }
+
+      .slogan {
+        font-size: 0.9rem;
+        padding: 0 1rem;
+      }
+
+      .get-started {
+        width: 90%;
+        max-width: 300px;
+        padding: 1rem;
+      }
+
+      .links {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .header-buttons {
+        right: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- HTML structure remains unchanged -->
-    <div class="container">
-        <header class="header">
-            <div class="logo">
-                masa
-                <div class="logo-subtext">MATHS ACADEMY OF SOUTH AFRICA</div>
-            </div>
-            <nav class="auth-links">
-                <a href="#login">Login</a>
-                <a href="#signup">Sign Up</a>
-            </nav>
-        </header>
-
-        <main class="hero">
-            <h1>For every learner,<br>every classroom.<br>Meaningful progress.</h1>
-            <p class="mission-statement">
-                Our mission is to deliver a world-class Mathematics education to every
-                student, everywhere in South Africa.
-            </p>
-            <a href="#join" class="cta-button">JOIN THE MOVEMENT</a>
-        </main>
-
-        <footer>
-            <nav class="footer-links">
-                <a href="#cookies">Cookies</a>
-                <a href="#privacy">Data Privacy</a>
-                <a href="#legal">Legal Notice</a>
-                <a href="#employees">Employee Login</a>
-            </nav>
-            <div class="copyright">
-                © 2025 Maths Academy of South Africa. Designed with care.
-            </div>
-        </footer>
+  <div class="left-section">
+    <!-- LOGO -->
+    <div class="logo">
+      masa
+      <span>MATHS ACADEMY<br />OF SOUTH AFRICA</span>
     </div>
+
+    <!-- HEADER BUTTONS -->
+    <div class="header-buttons">
+      <a href="#login">Login</a>
+      <a href="#signup">Sign Up</a>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <h1>For every learner,<br />every classroom.<br />Meaningful progress.</h1>
+    <p class="slogan">
+      Our mission is to deliver a world-class Mathematics education to every
+      student, everywhere in South Africa.
+    </p>
+    <a href="#start" class="get-started">JOIN THE MOVEMENT</a>
+
+    <!-- FOOTER LINKS -->
+    <div class="links">
+      <a href="#cookies">Cookies</a>
+      <a href="#privacy">Data Privacy</a>
+      <a href="#legal">Legal Notice</a>
+      <a href="#employees">Login for employees</a>
+    </div>
+
+    <!-- FOOTER COPYRIGHT -->
+    <div class="footer">
+      &copy; 2025 Maths Academy of South Africa. Designed with care.
+    </div>
+  </div>
 </body>
 </html>
