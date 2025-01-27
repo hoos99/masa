@@ -6,11 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Maths Academy - Join the Movement</title>
 
-  <!-- Your Font Awesome Kit (switch to CDN if it errors) -->
+  <!-- Use your Font Awesome kit or the CDN if needed -->
   <script src="https://kit.fontawesome.com/c3c92a5314.js" crossorigin="anonymous"></script>
 
   <style>
-    /* ========== DESKTOP / LAPTOP STYLES (UNCHANGED) ========== */
+    /* ========== DESKTOP (UNCHANGED) ========== */
     * {
       margin: 0;
       padding: 0;
@@ -36,8 +36,7 @@
       position: relative;
       background-color: #f9f9f9;
     }
-
-    /* Desktop: pinned top-left */
+    /* Logo pinned top-left on desktop */
     .logo {
       font-size: 2.5rem;
       font-weight: bold;
@@ -54,8 +53,7 @@
       color: #666;
       line-height: 1.2;
     }
-
-    /* Desktop: pinned top-right */
+    /* Header buttons pinned top-right on desktop */
     .header-buttons {
       display: flex;
       gap: 1rem;
@@ -74,7 +72,7 @@
       text-decoration: underline;
     }
 
-    /* Main content (desktop) */
+    /* Main content for desktop */
     .left-section h1 {
       font-size: 2rem;
       margin: 4rem 0 1.5rem 0;
@@ -110,7 +108,7 @@
       transform: scale(1.05);
     }
 
-    /* Footer links (desktop) */
+    /* Desktop footer links */
     .links {
       margin-top: 3rem;
       font-size: 0.7rem;
@@ -133,49 +131,55 @@
       text-align: center;
     }
 
-    /* Right section: background image on desktop */
+    /* Right-section background image for desktop */
     .right-section {
       width: 50%;
       background: url("images/background-image.jpeg") no-repeat center center;
       background-size: cover;
     }
 
-    /* ========== MOBILE STYLES (MAX-WIDTH: 768PX) ========== */
+    /* ========== MOBILE (MAX-WIDTH: 768px) ========== */
     @media (max-width: 768px) {
-      /* Stack vertically */
+      /* Stack sections vertically */
       body {
         flex-direction: column;
       }
-      /* Hide the image on mobile */
+      /* Hide right-section on mobile */
       .right-section {
         display: none;
       }
-      /* Full width on mobile */
+      /* Expand left-section to full width */
       .left-section {
         width: 100%;
         padding: 2rem;
       }
 
-      /* 1) Logo at top-left, name directly underneath on mobile */
+      /* LOGO: top-left, text below "masa" */
       .logo {
-        position: static;        /* remove absolute positioning */
-        float: left;             /* logo on the left */
+        position: static;
+        float: left;
+        /* stack "masa" above the sub-heading */
         display: flex;
-        flex-direction: column;  /* stack "masa" above the subtext */
-        align-items: flex-start; /* keep them left-aligned */
+        flex-direction: column;
+        align-items: flex-start;
         margin-bottom: 1rem;
+        font-size: 1.5rem; /* slightly smaller */
       }
-      /* The subtext is now forced below "masa" */
       .logo span {
-        margin: 0;
-        margin-top: 0.3rem; /* small spacing */
+        margin-left: 0; 
+        margin-top: 0.3rem;
+        font-size: 0.8rem; /* smaller sub-heading */
       }
 
-      /* 2) Login & Sign Up top-right on mobile */
+      /* HEADER BUTTONS: top-right */
       .header-buttons {
-        position: static;       /* remove absolute positioning */
-        float: right;           /* top-right */
+        position: static;
+        float: right;
         margin-bottom: 1rem;
+      }
+      /* Slightly smaller fonts for these links on mobile */
+      .header-buttons a {
+        font-size: 0.9rem;
       }
 
       /* Clear floats so headings appear below */
@@ -185,8 +189,22 @@
         clear: both;
       }
 
-      /* 3) Fix footers to be aligned & centered
-            (like the code in the earlier snippet) */
+      /* Make headings & text smaller */
+      .left-section h1 {
+        font-size: 1.6rem;
+        margin: 2rem 0 1rem 0;
+      }
+      .left-section .slogan {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+      }
+      .left-section .get-started {
+        font-size: 0.9rem;
+        padding: 0.4rem 1.5rem;
+        margin: 2rem auto;
+      }
+
+      /* Footer: aligned & centered, smaller text */
       .links {
         display: flex;
         justify-content: center;
@@ -195,14 +213,13 @@
         gap: 1.5rem;
         margin-top: 2rem;
         font-size: 0.8rem;
-        text-align: center;  /* center text horizontally */
-        letter-spacing: 0;   /* optional: remove extra spacing on mobile */
+        letter-spacing: 0;
+        text-align: center;
       }
       .links a {
-        margin: 0;           /* remove wide desktop margins */
-        white-space: nowrap; /* keeps text like "Login for employees" together */
+        margin: 0;
+        white-space: nowrap; /* keeps "Login for employees" on one line */
       }
-
       .footer {
         text-align: center;
         font-size: 0.8rem;
@@ -229,13 +246,14 @@
     <!-- MAIN CONTENT -->
     <h1>For every learner,<br>every classroom.<br>Meaningful progress.</h1>
     <p class="slogan">
-      Our mission is to deliver a world-class Mathematics education to every student, everywhere in South Africa.
+      Our mission is to deliver a world-class Mathematics education
+      to every student, everywhere in South Africa.
     </p>
     <a href="#start" class="get-started">JOIN THE MOVEMENT</a>
 
     <!-- FOOTER LINKS -->
     <div class="links">
-      <a href="#cookies">Cookies Notice</a>
+      <a href="#cookies">Cookies</a>
       <a href="#privacy">Data Privacy</a>
       <a href="#legal">Legal Notice</a>
       <a href="#employees">Login for employees</a>
@@ -247,7 +265,7 @@
     </div>
   </div>
 
-  <!-- RIGHT SECTION (hidden on mobile) -->
+  <!-- Right-side background image (desktop only) -->
   <div class="right-section"></div>
 </body>
 </html>
