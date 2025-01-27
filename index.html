@@ -7,28 +7,21 @@
 
   <title>Maths Academy - Join the Movement</title>
 
-  <!-- If your Font Awesome kit link throws an error, switch to the CDN -->
+  <!-- If your Font Awesome kit link throws an error, switch to CDN or remove it -->
   <script src="https://kit.fontawesome.com/c3c92a5314.js" crossorigin="anonymous"></script>
-  <!-- OR use a public CDN:
-       <link rel="stylesheet"
-             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-             integrity="sha512-..."
-             crossorigin="anonymous">
-  -->
 
   <style>
     /* ================================
-       1) Global Reset & Desktop Defaults
+       Desktop Defaults
+       (unchanged from your current code)
        ================================ */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-
     body {
       font-family: 'Roboto', sans-serif;
-      /* Desktop: side-by-side layout */
       display: flex;
       flex-direction: row;
       align-items: stretch;
@@ -36,10 +29,8 @@
       min-height: 100vh;
       background-color: #fff;
       color: #333;
-      margin: 0 auto; /* centers content if there's a fixed width container */
+      margin: 0 auto;
     }
-
-    /* LEFT SECTION - DESKTOP */
     .left-section {
       width: 50%;
       padding: 4rem;
@@ -49,15 +40,13 @@
       position: relative;
       background-color: #f9f9f9;
     }
-
-    /* LOGO (Desktop) */
     .logo {
       font-size: 2.5rem;
       font-weight: bold;
       color: #333;
       display: flex;
       align-items: center;
-      position: absolute; /* pinned to top-left on wide screens */
+      position: absolute; /* Pinned top-left on desktop */
       top: 1rem;
       left: 1.5rem;
     }
@@ -67,12 +56,10 @@
       color: #666;
       line-height: 1.2;
     }
-
-    /* HEADER BUTTONS (Desktop) */
     .header-buttons {
       display: flex;
       gap: 1rem;
-      position: absolute; /* pinned top-right on wide screens */
+      position: absolute; /* Pinned top-right on desktop */
       top: 1.5rem;
       right: 1.5rem;
     }
@@ -86,8 +73,6 @@
     .header-buttons a:hover {
       text-decoration: underline;
     }
-
-    /* MAIN HEADINGS (Desktop) */
     .left-section h1 {
       font-size: 2rem;
       margin: 4rem 0 1.5rem 0;
@@ -106,8 +91,6 @@
       margin-bottom: 2rem;
       text-align: center;
     }
-
-    /* CALL-TO-ACTION BUTTON (Desktop) */
     .left-section .get-started {
       text-decoration: none;
       font-size: 1rem;
@@ -124,8 +107,6 @@
       background-color: #333;
       transform: scale(1.05);
     }
-
-    /* FOOTER LINKS (Desktop) */
     .left-section .links {
       margin-top: 3rem;
       font-size: 0.7rem;
@@ -141,16 +122,12 @@
     .left-section .links a:hover {
       text-decoration: underline;
     }
-
-    /* FOOTER TEXT */
     .left-section .footer {
       margin-top: 2rem;
       font-size: 0.8rem;
       color: #ccc;
       text-align: center;
     }
-
-    /* RIGHT SECTION (Desktop Background Image) */
     .right-section {
       width: 50%;
       background: url("images/background-image.jpeg") no-repeat center center;
@@ -158,107 +135,49 @@
     }
 
     /* ================================
-       2) MOBILE STYLES (Max Width 768px)
-       Adopt aspects of your second snippet
+       Mobile Overrides (max-width: 768px)
+       Focus: Top-left logo, top-right buttons
        ================================ */
     @media (max-width: 768px) {
-      /* Stack everything vertically */
+      /* Stack sections vertically on mobile */
       body {
         flex-direction: column;
       }
 
-      /* Hide the background image on mobile */
+      /* Hide the right-section on mobile */
       .right-section {
         display: none;
       }
 
-      /* Left Section becomes full width */
+      /* Expand left-section to full width */
       .left-section {
         width: 100%;
-        /* Approx. from second snippet: center everything */
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        text-align: center;
-        padding: 1rem;
-        min-height: 100vh;
+        padding: 2rem;
       }
 
-      /* Remove absolute positioning for mobile */
+      /* Override absolute positioning on mobile;
+         Float logo left, header-buttons right. */
       .logo {
         position: static;
-        margin-bottom: 1rem;
-        font-size: 1.5rem;   /* Closer to your second snippet’s style */
-        font-weight: bold;
-        text-transform: lowercase;
-        line-height: 1.2;
+        float: left;
+        margin-bottom: 1rem; /* small space if desired */
       }
-      .logo span {
-        display: block;
-        font-size: 0.8rem;
-        font-weight: normal;
-        text-transform: uppercase;
-        margin-left: 0;  /* Because it's no longer side by side */
-      }
-
       .header-buttons {
         position: static;
-        margin-bottom: 1rem;
-        display: flex;
-        gap: 1.5rem;
-        justify-content: center;
-      }
-      .header-buttons a {
-        font-size: 1rem;
+        float: right;
+        margin-bottom: 1rem; /* small space if desired */
       }
 
-      /* Headings from second snippet’s style (approx.) */
-      .left-section h1 {
-        font-size: 1.8rem;
-        margin: 2rem 0 1rem;
-      }
-      .left-section .slogan {
-        font-size: 1rem;
-        margin-bottom: 1.5rem;
-        max-width: 300px;
-        color: #333;
-      }
-
-      /* CTA Button style from second snippet */
-      .left-section .get-started {
-        font-size: 1rem;
-        padding: 0.5rem 2rem;
-        border-radius: 20px;
-      }
-
-      /* Footer links: horizontally centered */
-      .left-section .links {
-        display: flex;
-        justify-content: center;
-        gap: 1.5rem;
-        font-size: 0.8rem;
-        color: #333;
-        letter-spacing: normal; /* you can keep or remove letter-spacing for mobile */
-        margin-top: 2rem;
-      }
-      .left-section .links a {
-        margin: 0;
-        text-decoration: none;
-        color: #333;
-      }
-
-      /* Slightly smaller text */
-      .left-section .footer {
-        font-size: 0.7rem;
-        color: #666;
-        margin-top: 0.5rem;
+      /* Clear floats so content (h1, slogan, etc.) appears below */
+      .left-section::after {
+        content: '';
+        display: block;
+        clear: both;
       }
     }
   </style>
 </head>
 <body>
-  <!-- LEFT SECTION -->
   <div class="left-section">
     <!-- LOGO -->
     <div class="logo">
@@ -272,14 +191,12 @@
       <a href="#signup">Sign Up</a>
     </div>
 
-    <!-- MAIN TITLE & SLOGAN -->
+    <!-- MAIN CONTENT -->
     <h1>For every learner,<br>every classroom.<br>Meaningful progress.</h1>
     <p class="slogan">
       Our mission is to deliver a world-class Mathematics education
       to every student, everywhere in South Africa.
     </p>
-
-    <!-- CTA BUTTON -->
     <a href="#start" class="get-started">JOIN THE MOVEMENT</a>
 
     <!-- FOOTER LINKS -->
@@ -296,7 +213,6 @@
     </div>
   </div>
 
-  <!-- RIGHT SECTION (BACKGROUND IMAGE) -->
   <div class="right-section"></div>
 </body>
 </html>
