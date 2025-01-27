@@ -1,169 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maths Academy - Join the Movement</title>
-    <script src="https://kit.fontawesome.com/c3c92a5314.js" crossorigin="anonymous"></script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <!-- Ensures mobile responsiveness -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maths Academy - Join the Movement</title>
+  <script src="https://kit.fontawesome.com/c3c92a5314.js" crossorigin="anonymous"></script>
+  <style>
+    /* Global Reset and Box Sizing */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body {
-            font-family: 'Roboto', sans-serif;
-            display: flex;
-            flex-direction: row;
-            align-items: stretch;
-            justify-content: space-between;
-            min-height: 100vh;
-            background-color: #fff;
-            color: #333;
-        }
+    /* Base Styling */
+    body {
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+      justify-content: space-between;
+      min-height: 100vh;
+      background-color: #fff;
+      color: #333;
+      margin: 0 auto;
+    }
 
-        .left-section {
-            width: 50%;
-            padding: 4rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            position: relative;
-            background-color: #f9f9f9;
-        }
+    /* Left Section */
+    .left-section {
+      width: 50%;
+      padding: 4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      position: relative;
+      background-color: #f9f9f9;
+    }
 
-        .logo {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #333;
-            display: flex;
-            align-items: center;
-            position: absolute;
-            top: 1rem;
-            left: 1.5rem;
-        }
+    /* Logo */
+    .logo {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #333;
+      display: flex;
+      align-items: center;
+      position: absolute;
+      top: 1rem;
+      left: 1.5rem;
+    }
+    .logo span {
+      margin-left: 1rem;
+      font-size: 1rem;
+      color: #666;
+      line-height: 1.2;
+    }
 
-        .logo span {
-            margin-left: 1rem;
-            font-size: 1rem;
-            color: #666;
-            line-height: 1.2;
-        }
+    /* Header Buttons */
+    .header-buttons {
+      display: flex;
+      gap: 1rem;
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+    }
+    .header-buttons a {
+      text-decoration: none;
+      font-size: 0.9rem;
+      color: #000;
+      font-weight: bold;
+      transition: color 0.3s, text-decoration 0.3s;
+    }
+    .header-buttons a:hover {
+      text-decoration: underline;
+    }
 
-        .header-buttons {
-            display: flex;
-            gap: 1rem;
-            position: absolute;
-            top: 1.5rem;
-            right: 1.5rem;
-        }
+    /* Headings and Text */
+    .left-section h1 {
+      font-size: 2rem;
+      margin: 4rem 0 1.5rem 0;
+      color: #222;
+      text-align: center;
+    }
+    .left-section .slogan {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      color: #555;
+      text-align: center;
+    }
+    .left-section .mission {
+      font-size: 1rem;
+      color: #666;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
 
-        .header-buttons a {
-            text-decoration: none;
-            font-size: 0.9rem;
-            color: #000;
-            font-weight: bold;
-            transition: color 0.3s, text-decoration 0.3s;
-        }
+    /* Call to Action Button */
+    .left-section .get-started {
+      text-decoration: none;
+      font-size: 1rem;
+      color: #fff;
+      background-color: #000;
+      padding: 0.6rem 1.5rem;
+      border-radius: 20px;
+      border: none;
+      align-self: center;
+      margin: 2rem auto;
+    }
+    .left-section .get-started:hover {
+      background-color: #333;
+      transform: scale(1.05);
+    }
 
-        .header-buttons a:hover {
-            text-decoration: underline;
-        }
+    /* Footer Links */
+    .left-section .links {
+      margin-top: 3rem;
+      font-size: 0.7rem;
+      color: #999;
+      text-align: center;
+      letter-spacing: 0.15rem;
+    }
+    .left-section .links a {
+      color: #999;
+      text-decoration: none;
+      margin: 0 1rem;
+    }
+    .left-section .links a:hover {
+      text-decoration: underline;
+    }
 
-        .left-section h1 {
-            font-size: 2rem;
-            margin: 4rem 0 1.5rem 0;
-            color: #222;
-            text-align: center;
-        }
+    /* Footer */
+    .left-section .footer {
+      margin-top: 2rem;
+      font-size: 0.8rem;
+      color: #ccc;
+      text-align: center;
+    }
 
-        .left-section .slogan {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            color: #555;
-            text-align: center;
-        }
+    /* Right Section (Background Image) */
+    .right-section {
+      width: 50%;
+      background: url("images/background-image.jpeg") no-repeat center center;
+      background-size: cover;
+    }
 
-        .left-section .mission {
-            font-size: 1rem;
-            color: #666;
-            margin-bottom: 2rem;
-            text-align: center;
-        }
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
 
-        .left-section .get-started {
-            text-decoration: none;
-            font-size: 1rem;
-            color: #fff;
-            background-color: #000;
-            padding: 0.6rem 1.5rem;
-            border-radius: 20px;
-            border: none;
-            align-self: center;
-            margin: 2rem auto;
-        }
+      .left-section {
+        width: 100%;
+        padding: 2rem;
+      }
 
-        .left-section .get-started:hover {
-            background-color: #333;
-            transform: scale(1.05);
-        }
-
-        .left-section .links {
-            margin-top: 3rem;
-            font-size: 0.7rem;
-            color: #999;
-            text-align: center;
-            letter-spacing: 0.15rem;
-        }
-
-        .left-section .links a {
-            color: #999;
-            text-decoration: none;
-            margin: 0 1rem;
-        }
-
-        .left-section .links a:hover {
-            text-decoration: underline;
-        }
-
-        .left-section .footer {
-            margin-top: 2rem;
-            font-size: 0.8rem;
-            color: #ccc;
-            text-align: center;
-        }
-
-        .right-section {
-            width: 50%;
-            background: url('images/background-image.jpeg') no-repeat center center;
-            background-size: cover;
-        }
-    </style>
+      /* Hide the right-section (image) completely on mobile */
+      .right-section {
+        display: none;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="left-section">
-        <div class="logo">
-            ma
-            <span>MATHS ACADEMY<br>OF SOUTH AFRICA</span>
-        </div>
-        <div class="header-buttons">
-            <a href="#login">Login</a>
-            <a href="#signup">Sign Up</a>
-        </div>
-        <h1>For every learner,<br>every classroom.<br>Meaningful progress.</h1>
-        <p class="slogan">Our mission is to deliver a world-class Mathematics education to every student, everywhere in South Africa.</p>
-        <a href="#start" class="get-started">JOIN THE MOVEMENT</a>
-        <div class="links">
-            <a href="#cookies">Cookies</a>
-            <a href="#privacy">Data Privacy</a>
-            <a href="#legal">Legal Notice</a>
-            <a href="#employees">Login for employees</a>
-        </div>
-        <div class="footer">
-            &copy; 2025 Maths Academy. Designed with care.
-        </div>
+  <div class="left-section">
+    <!-- Updated Logo Text to "masa" -->
+    <div class="logo">
+      masa
+      <span>MATHS ACADEMY<br>OF SOUTH AFRICA</span>
     </div>
-    <div class="right-section"></div>
+
+    <div class="header-buttons">
+      <a href="#login">Login</a>
+      <a href="#signup">Sign Up</a>
+    </div>
+
+    <h1>For every learner,<br>every classroom.<br>Meaningful progress.</h1>
+    <p class="slogan">
+      Our mission is to deliver a world-class Mathematics education
+      to every student, everywhere in South Africa.
+    </p>
+    <a href="#start" class="get-started">JOIN THE MOVEMENT</a>
+
+    <div class="links">
+      <a href="#cookies">Cookies</a>
+      <a href="#privacy">Data Privacy</a>
+      <a href="#legal">Legal Notice</a>
+      <a href="#employees">Login for employees</a>
+    </div>
+
+    <!-- Updated Footer Text -->
+    <div class="footer">
+      &copy; 2025 Maths Academy of South Africa. Designed with care.
+    </div>
+  </div>
+
+  <!-- This section is hidden on mobile via the media query -->
+  <div class="right-section"></div>
 </body>
 </html>
