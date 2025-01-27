@@ -15,7 +15,7 @@
     }
     body {
       font-family: 'Roboto', sans-serif;
-      /* Desktop: side-by-side layout */
+      /* Desktop layout: side-by-side */
       display: flex;
       flex-direction: row;
       align-items: stretch;
@@ -42,7 +42,7 @@
       color: #333;
       display: flex;
       align-items: center;
-      position: absolute; /* For desktop: top-left corner */
+      position: absolute; /* Desktop: pinned top-left */
       top: 1rem;
       left: 1.5rem;
     }
@@ -57,7 +57,7 @@
     .header-buttons {
       display: flex;
       gap: 1rem;
-      position: absolute; /* For desktop: top-right corner */
+      position: absolute; /* Desktop: pinned top-right */
       top: 1.5rem;
       right: 1.5rem;
     }
@@ -86,7 +86,7 @@
       text-align: center;
     }
 
-    /* CALL TO ACTION BUTTON */
+    /* CALL-TO-ACTION BUTTON */
     .get-started {
       text-decoration: none;
       font-size: 1rem;
@@ -136,48 +136,48 @@
       background-size: cover;
     }
 
-    /*****************************************************************
-      MEDIA QUERY (MOBILE < 768px)
-      Here we alter layout/positioning to match your desired mobile design
-    *****************************************************************/
+    /**********************************************************
+     MOBILE (max-width: 768px)
+     - Float logo left and header buttons right
+     - Use flex-wrap for footer links so they stay on one line 
+       unless forced to wrap as a block
+    **********************************************************/
     @media (max-width: 768px) {
-      /* Stack sections vertically */
+      /* Stack sections vertically on mobile */
       body {
         flex-direction: column;
       }
 
-      /* Left section full width */
       .left-section {
         width: 100%;
         padding: 2rem 1rem;
       }
 
-      /* Hide right section on mobile */
+      /* Hide the right section on mobile */
       .right-section {
         display: none;
       }
 
-      /* LOGO & HEADER BUTTONS: No absolute positioning */
+      /* Logo & header buttons inline instead of absolute */
       .logo {
         position: static;
-        display: inline-flex; /* Keep "masa" and subtext on the same line */
-        float: left;          /* Floats to left in the same row */
+        float: left;
         margin-bottom: 0.5rem;
       }
       .header-buttons {
         position: static;
-        float: right;         /* Floats to the right in the same row */
+        float: right;
         margin-top: 0.3rem;
       }
 
-      /* Clear floats so headings appear below */
+      /* Clear floats so headings appear below the logo/buttons row */
       .left-section::after {
         content: '';
         display: block;
         clear: both;
       }
 
-      /* Adjust heading & text for mobile spacing */
+      /* Adjust heading & slogan sizes for mobile */
       h1 {
         font-size: 1.7rem;
         margin: 3rem 0 1rem;
@@ -190,19 +190,24 @@
         margin: 2rem auto;
       }
 
-      /* Footer links in a horizontal row centered at the bottom */
+      /* Footer links: flexible in one row, no awkward line breaks */
       .links {
-        margin-top: 3rem;
-        font-size: 0.8rem;
         display: flex;
-        flex-wrap: wrap;
         justify-content: center;
-        gap: 1rem;
+        align-items: center;
+        flex-wrap: wrap;  /* allows them to break into multiple lines if truly necessary */
+        gap: 1.5rem;
+        margin-top: 2rem;
       }
-      /* Footer text slightly smaller, centered */
+      .links a {
+        /* Prevent link text from splitting onto multiple lines */
+        white-space: nowrap;
+      }
+
+      /* Adjust footer text spacing */
       .footer {
-        font-size: 0.8rem;
         margin-top: 1.5rem;
+        font-size: 0.8rem;
       }
     }
   </style>
@@ -222,10 +227,14 @@
     </div>
 
     <!-- MAIN CONTENT -->
-    <h1>For every learner,<br>every classroom.<br>Meaningful progress.</h1>
+    <h1>
+      For every learner,<br>
+      every classroom.<br>
+      Meaningful progress.
+    </h1>
     <p class="slogan">
-      Our mission is to deliver a world-class Mathematics
-      education to every student, everywhere in South Africa.
+      Our mission is to deliver a world-class Mathematics education
+      to every student, everywhere in South Africa.
     </p>
     <a href="#start" class="get-started">JOIN THE MOVEMENT</a>
 
@@ -243,7 +252,8 @@
     </div>
   </div>
 
-  <!-- RIGHT SECTION: HIDDEN ON MOBILE -->
+  <!-- RIGHT SECTION (hidden on mobile) -->
   <div class="right-section"></div>
 </body>
 </html>
+
