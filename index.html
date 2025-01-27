@@ -4,17 +4,13 @@
   <meta charset="UTF-8" />
   <!-- Ensures mobile responsiveness -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Maths Academy - Join the Movement</title>
 
-  <!-- If your Font Awesome kit link throws an error, switch to CDN or remove it -->
+  <!-- Your Font Awesome Kit (switch to CDN if it errors) -->
   <script src="https://kit.fontawesome.com/c3c92a5314.js" crossorigin="anonymous"></script>
 
   <style>
-    /* ================================
-       Desktop Defaults
-       (unchanged from your current code)
-       ================================ */
+    /* ========== DESKTOP / LAPTOP STYLES (UNCHANGED) ========== */
     * {
       margin: 0;
       padding: 0;
@@ -40,13 +36,15 @@
       position: relative;
       background-color: #f9f9f9;
     }
+
+    /* Desktop: pinned top-left */
     .logo {
       font-size: 2.5rem;
       font-weight: bold;
       color: #333;
       display: flex;
       align-items: center;
-      position: absolute; /* Pinned top-left on desktop */
+      position: absolute;
       top: 1rem;
       left: 1.5rem;
     }
@@ -56,10 +54,12 @@
       color: #666;
       line-height: 1.2;
     }
+
+    /* Desktop: pinned top-right */
     .header-buttons {
       display: flex;
       gap: 1rem;
-      position: absolute; /* Pinned top-right on desktop */
+      position: absolute;
       top: 1.5rem;
       right: 1.5rem;
     }
@@ -73,6 +73,8 @@
     .header-buttons a:hover {
       text-decoration: underline;
     }
+
+    /* Main content (desktop) */
     .left-section h1 {
       font-size: 2rem;
       margin: 4rem 0 1.5rem 0;
@@ -107,72 +109,105 @@
       background-color: #333;
       transform: scale(1.05);
     }
-    .left-section .links {
+
+    /* Footer links (desktop) */
+    .links {
       margin-top: 3rem;
       font-size: 0.7rem;
       color: #999;
       text-align: center;
       letter-spacing: 0.15rem;
     }
-    .left-section .links a {
+    .links a {
       color: #999;
       text-decoration: none;
       margin: 0 1rem;
     }
-    .left-section .links a:hover {
+    .links a:hover {
       text-decoration: underline;
     }
-    .left-section .footer {
+    .footer {
       margin-top: 2rem;
       font-size: 0.8rem;
       color: #ccc;
       text-align: center;
     }
+
+    /* Right section: background image on desktop */
     .right-section {
       width: 50%;
       background: url("images/background-image.jpeg") no-repeat center center;
       background-size: cover;
     }
 
-    /* ================================
-       Mobile Overrides (max-width: 768px)
-       Focus: Top-left logo, top-right buttons
-       ================================ */
+    /* ========== MOBILE STYLES (MAX-WIDTH: 768PX) ========== */
     @media (max-width: 768px) {
-      /* Stack sections vertically on mobile */
+      /* Stack vertically */
       body {
         flex-direction: column;
       }
-
-      /* Hide the right-section on mobile */
+      /* Hide the image on mobile */
       .right-section {
         display: none;
       }
-
-      /* Expand left-section to full width */
+      /* Full width on mobile */
       .left-section {
         width: 100%;
         padding: 2rem;
       }
 
-      /* Override absolute positioning on mobile;
-         Float logo left, header-buttons right. */
+      /* 1) Logo at top-left, name directly underneath on mobile */
       .logo {
-        position: static;
-        float: left;
-        margin-bottom: 1rem; /* small space if desired */
+        position: static;        /* remove absolute positioning */
+        float: left;             /* logo on the left */
+        display: flex;
+        flex-direction: column;  /* stack "masa" above the subtext */
+        align-items: flex-start; /* keep them left-aligned */
+        margin-bottom: 1rem;
       }
-      .header-buttons {
-        position: static;
-        float: right;
-        margin-bottom: 1rem; /* small space if desired */
+      /* The subtext is now forced below "masa" */
+      .logo span {
+        margin: 0;
+        margin-top: 0.3rem; /* small spacing */
       }
 
-      /* Clear floats so content (h1, slogan, etc.) appears below */
+      /* 2) Login & Sign Up top-right on mobile */
+      .header-buttons {
+        position: static;       /* remove absolute positioning */
+        float: right;           /* top-right */
+        margin-bottom: 1rem;
+      }
+
+      /* Clear floats so headings appear below */
       .left-section::after {
         content: '';
         display: block;
         clear: both;
+      }
+
+      /* 3) Fix footers to be aligned & centered
+            (like the code in the earlier snippet) */
+      .links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        margin-top: 2rem;
+        font-size: 0.8rem;
+        text-align: center;  /* center text horizontally */
+        letter-spacing: 0;   /* optional: remove extra spacing on mobile */
+      }
+      .links a {
+        margin: 0;           /* remove wide desktop margins */
+        white-space: nowrap; /* keeps text like "Login for employees" together */
+      }
+
+      .footer {
+        text-align: center;
+        font-size: 0.8rem;
+        margin-top: 1rem;
+        color: #ccc;
       }
     }
   </style>
@@ -194,14 +229,13 @@
     <!-- MAIN CONTENT -->
     <h1>For every learner,<br>every classroom.<br>Meaningful progress.</h1>
     <p class="slogan">
-      Our mission is to deliver a world-class Mathematics education
-      to every student, everywhere in South Africa.
+      Our mission is to deliver a world-class Mathematics education to every student, everywhere in South Africa.
     </p>
     <a href="#start" class="get-started">JOIN THE MOVEMENT</a>
 
     <!-- FOOTER LINKS -->
     <div class="links">
-      <a href="#cookies">Cookies</a>
+      <a href="#cookies">Cookies Notice</a>
       <a href="#privacy">Data Privacy</a>
       <a href="#legal">Legal Notice</a>
       <a href="#employees">Login for employees</a>
@@ -213,6 +247,7 @@
     </div>
   </div>
 
+  <!-- RIGHT SECTION (hidden on mobile) -->
   <div class="right-section"></div>
 </body>
 </html>
